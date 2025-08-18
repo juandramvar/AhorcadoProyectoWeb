@@ -1,18 +1,13 @@
+# AhorcadoProyectoWeb / GRUPO 8
 --------------------------------------------------------------------
-# AhorcadoProyectoWeb
---------------------------------------------------------------------
-# NOMBRES / CARNÉ DE LOS INTEGRANTES
-Juan Diego Ramírez Vargas
-FH22011760
-
-Alexander Sojo Jiménez
-FI23030406
-
---------------------------------------------------------------------
-# USUARIOS / CORREO UTILIZADOS EN GITHUB
+# NOMBRES / CARNÉ / USUARIO Y CORREO DE LOS INTEGRANTES
+Nombre: Juan Diego Ramírez Vargas
+Carné: FH22011760
 User: juandramvar
 Email: juandramvar@gmail.com
 
+Nombre: Alexander Sojo Jiménez
+Carné: FI23030406
 User: AlexanderSojoJ
 Email: alesojojimes@gmail.com
 
@@ -21,7 +16,6 @@ Email: alesojojimes@gmail.com
 Link: (editar después al subir la imagen)
 
 --------------------------------------------------------------------
-# REFERENCIAS Y PROMPTS RESUMIDOS UTILIZADOS EN EL PROYECTO
 # REFERENCIAS
 
 Entity Framework 6 – Database First (EDMX) – guía oficial para invertir el modelo desde una BD existente.
