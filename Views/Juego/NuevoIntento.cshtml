@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Nuevo Intento";
+}
+
+<h2>Nuevo Intento</h2>
+<p>@ViewBag.Mensaje</p>
+
+<div class="d-flex gap-2 mt-3">
+    <a class="btn btn-primary" href="@Url.Action("IniciarJuego", "Juego")">Iniciar Juego</a>
+    <a class="btn btn-secondary" href="@Url.Action("Index", "Home")">Volver al inicio</a>
+</div>

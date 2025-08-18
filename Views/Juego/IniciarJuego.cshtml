@@ -1,0 +1,60 @@
+﻿@model AhorcadoProyectoWeb.Models.JuegoViewModel
+@{
+    ViewBag.Title = "Iniciar Juego";
+}
+
+<h2 class="mb-3">Iniciar Juego</h2>
+
+@if (TempData["JuegoOk"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["JuegoOk"]
+    </div>
+}
+
+@using (Html.BeginForm("IniciarJuego", "Juego", FormMethod.Post, new { @class = "mt-3" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="SelectedUsuarioId">Usuario</label>
+                @Html.DropDownListFor(m => m.SelectedUsuarioId, Model.Usuarios, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.SelectedUsuarioId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="SelectedDificultad">Dificultad</label>
+                @Html.DropDownListFor(m => m.SelectedDificultad, Model.Dificultades, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.SelectedDificultad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2 mb-4">
+        <button type="submit" class="btn btn-primary">Comenzar</button>
+        <a class="btn btn-secondary" href="@Url.Action("Index","Home")">Volver al inicio</a>
+    </div>
+}
+
+<hr />
+
+<h4 class="mt-4">Tiempos por dificultad</h4>
+<ul>
+    <li><strong>Fácil:</strong> 1.5 minutos (1 minuto con 30 segundos).</li>
+    <li><strong>Normal:</strong> 1 minuto.</li>
+    <li><strong>Difícil:</strong> 0.5 minutos (30 segundos).</li>
+</ul>
+
+<h4 class="mt-3">Puntaje por resultado</h4>
+<ul>
+    <li>Victoria en <strong>Fácil</strong>: +1 punto</li>
+    <li>Victoria en <strong>Normal</strong>: +2 puntos</li>
+    <li>Victoria en <strong>Difícil</strong>: +3 puntos</li>
+    <li>Derrota en <strong>Fácil</strong>: -1 punto</li>
+    <li>Derrota en <strong>Normal</strong>: -2 puntos</li>
+    <li>Derrota en <strong>Difícil</strong>: -3 puntos</li>
+</ul>

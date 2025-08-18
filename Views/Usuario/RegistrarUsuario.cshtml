@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Usuario - Registrar";
+    // Si hubo errores, mostramos los valores normalizados que el controlador colocó en ViewData
+    var cedulaVal = ViewData["cedula"] as string;
+    var nombreVal = ViewData["nombre"] as string;
+}
+
+<h2 class="mb-3">Registrar usuario</h2>
+
+@if (TempData["UsuarioOk"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["UsuarioOk"]
+    </div>
+}
+
+@using (Html.BeginForm("RegistrarUsuario", "Usuario", FormMethod.Post, new { @class = "mt-3" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group mb-3">
+        <label for="cedula">Cédula</label>
+        @Html.TextBox("cedula", cedulaVal ?? null, new
+        {
+            @class = "form-control",
+            placeholder = "Ej: 101234567 (solo dígitos)",
+            maxlength = "12",
+            required = "required",
+            inputmode = "numeric",
+            pattern = "[0-9]{9,12}",
+            title = "Solo dígitos, 9–12 caracteres.",
+            autocomplete = "off"
+        })
+        @Html.ValidationMessage("cedula", "", new { @class = "text-danger" })
+        <small class="form-text text-muted">Se aceptan guiones/espacios al escribir; se guardará solo en dígitos.</small>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="nombre">Nombre</label>
+        @Html.TextBox("nombre", nombreVal ?? null, new
+        {
+            @class = "form-control",
+            placeholder = "Ej: María Pérez",
+            maxlength = "50",
+            required = "required",
+            autocomplete = "off",
+            pattern = "[A-Za-zÀ-ÿÑñ\\s]{2,50}",
+            title = "Solo letras y espacios (2–50). Admite tildes y ñ."
+        })
+        @Html.ValidationMessage("nombre", "", new { @class = "text-danger" })
+        <small class="form-text text-muted">Se capitaliza automáticamente (María Pérez).</small>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a class="btn btn-secondary" href="@Url.Action("Index","Home")">Volver al inicio</a>
+    </div>
+}

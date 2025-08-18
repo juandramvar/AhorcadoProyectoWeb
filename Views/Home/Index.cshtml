@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<style>
+    /* Fondo suave y cards con efecto sutil */
+    .hero-wrap {
+        background: radial-gradient(1200px 600px at 10% -20%, #eef6ff, #ffffff 50%), radial-gradient(900px 500px at 120% 120%, #f7f9ff, #ffffff 60%);
+        border-radius: 16px;
+        padding: 2.2rem;
+        box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 6px 24px rgba(0,0,0,.06);
+    }
+
+    .app-title {
+        font-weight: 800;
+        letter-spacing: .2px;
+    }
+
+    .card-cta {
+        border: 0;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0,0,0,.06);
+        transition: transform .12s ease, box-shadow .2s ease;
+        height: 100%;
+    }
+
+        .card-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(0,0,0,.08);
+        }
+
+        .card-cta .card-body {
+            padding: 1.25rem 1.25rem 1rem 1.25rem;
+        }
+
+    .emoji {
+        font-size: 2rem;
+        line-height: 1;
+        display: inline-block;
+        margin-right: .5rem;
+    }
+
+    .btn-cta {
+        border-radius: 12px;
+        font-weight: 600;
+        padding: .55rem 1rem;
+    }
+</style>
+
+<div class="hero-wrap mb-4">
+    <h1 class="app-title mb-2">Ahorcado</h1>
+    <p class="text-muted mb-0">Elige una opción para comenzar</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card card-cta">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="emoji">🎮</span>
+                    <h5 class="mb-0">Jugar</h5>
+                </div>
+                <p class="text-muted mb-3">Inicia una nueva partida eligiendo jugador y dificultad.</p>
+                <a class="btn btn-primary btn-cta w-100" href="@Url.Action("IniciarJuego","Juego")">Comenzar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card card-cta">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="emoji">🧑‍💻</span>
+                    <h5 class="mb-0">Usuario</h5>
+                </div>
+                <p class="text-muted mb-3">Registra un jugador nuevo (cédula y nombre).</p>
+                <a class="btn btn-outline-primary btn-cta w-100" href="@Url.Action("RegistrarUsuario","Usuario")">Registrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card card-cta">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="emoji">🏆</span>
+                    <h5 class="mb-0">Escalafón</h5>
+                </div>
+                <p class="text-muted mb-3">Mira el ranking: marcador, ganadas y perdidas.</p>
+                <a class="btn btn-outline-primary btn-cta w-100" href="@Url.Action("VerEscalafon","Escalafon")">Ver ranking</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card card-cta">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="emoji">📚</span>
+                    <h5 class="mb-0">Diccionario</h5>
+                </div>
+                <p class="text-muted mb-3">Agrega palabras (5–10 letras) y revisa su estado.</p>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-outline-primary btn-cta" href="@Url.Action("AgregarPalabra","Diccionario")">Agregar palabra</a>
+                    <a class="btn btn-outline-secondary btn-cta" href="@Url.Action("Estado","Diccionario")">Ver estado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

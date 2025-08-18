@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AhorcadoProyectoWeb.Models.EscalafonItem>
+@{
+    ViewBag.Title = "Escalafón de jugadores";
+}
+
+<h2 class="mb-3">Escalafón de jugadores</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Identificación</th>
+            <th>Nombre</th>
+            <th class="text-end">Marcador</th>
+            <th class="text-end">Ganadas</th>
+            <th class="text-end">Perdidas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Cedula</td>
+                <td>@x.Nombre</td>
+                <td class="text-end">@x.Marcador</td>
+                <td class="text-end">@x.Ganadas</td>
+                <td class="text-end">@x.Perdidas</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex gap-2">
+    <a class="btn btn-secondary" href="@Url.Action("Index","Home")">Volver al inicio</a>
+    <a class="btn btn-outline-primary" href="@Url.Action("IniciarJuego","Juego")">Nueva partida</a>
+</div>
