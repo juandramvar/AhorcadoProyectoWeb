@@ -14,7 +14,8 @@
 
 
 ## IMAGEN / DIAGRAMA DE TABLAS CREADAS
-**Link:** _(editar después al subir la imagen)_
+**Link:** _(<img width="1354" height="759" alt="image" src="https://github.com/user-attachments/assets/ca5d44bc-ac56-4776-ba4c-ed2e36eb8868" />
+)_
 
 
 ## REFERENCIAS
